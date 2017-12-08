@@ -1,0 +1,33 @@
+p
+{
+    color: blue;
+}
+
+fieldset 
+{
+    border: 1px solid rgb(226, 114, 114) !important;
+    margin: 0;
+    padding: 10px;       
+    position: relative;
+    border-radius:4px;
+    background-color:#180707;
+    padding-left:10px!important;
+}	
+
+    legend
+    {
+        font-size:14px;
+        font-weight:bold;
+        margin-bottom: 0px; 
+        width: 35%; 
+        border: 1px solid rgb(71, 34, 34);
+        border-radius: 4px; 
+        padding: 5px 5px 5px 10px; 
+        background-color: #140909;
+    }
+
+    img {
+        max-height: 512px;
+        max-width: 512px;
+        
+    }

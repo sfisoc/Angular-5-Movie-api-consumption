@@ -1,0 +1,39 @@
+<div class="container" *ngIf="mv">
+  
+    <div class="row">
+  
+      <div class="col-lg-4 col-md-12" >
+  
+        <div class="card card-cascade wider">
+  
+          <div class="view overlay hm-white-slight">
+  
+            <a href="#!">
+              <div class="mask">
+                <img src="https://image.tmdb.org/t/p/original{{mv.poster_path}}"  class="img-fluid" alt="wider">
+              </div>
+            </a>
+          </div>
+  
+          <div class="card-body text-center">
+  
+            <h4 class="card-title">
+              <strong>{{mv.title}}</strong>
+            </h4>
+            <h5 class="indigo-text">
+              <strong>{{mv.release_date}}</strong>
+            </h5>
+  
+            <p class="card-text">{{mv.overview}}</p>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+   <!--  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+   -->
+    <!-- Modal -->
+   
+  
+  </div>

@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder={{word}} [(ngModel)]="word" aria-label="Search">
+    <button class="btn btn-primary" (click)="search()">Search</button>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+
+    <div class="col-lg-4 col-md-12" *ngFor="let mv of results">
+
+      <div class="card card-cascade wider">
+
+        <div class="view overlay hm-white-slight">
+
+         
+            <div class="mask">
+              <img src="https://image.tmdb.org/t/p/original{{mv.poster_path}}" data-toggle="modal" (click)="open(mv)" data-target="#myModal" class="img-fluid" alt="wider">
+            </div>
+         
+        </div>
+
+        <div class="card-body text-center">
+
+          <h4 class="card-title">
+            <strong>{{mv.title}}</strong>
+          </h4>
+          <h5 class="indigo-text">
+            <strong>{{mv.release_date}}</strong>
+          </h5>
+
+          <p class="card-text smalldetails">{{mv.overview}}</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+ <!--  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+ -->
+  <!-- Modal -->
+  <div class="row">
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" *ngIf="movie">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">
+              <font color="black">{{movie.title}}</font>
+            </h4>
+          </div>
+          <div class="modal-body">
+              <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" class="img-fluid" alt="wider">
+              <h4 class="card-title">
+                  <font color="black"><strong>{{movie.title}}</strong></font>
+                </h4>
+                <h5 class="indigo-text">
+                    <font color="black"> <strong>{{movie.release_date}}</strong></font>
+                </h5>
+      
+                <font color="black"> <p class="card-text">{{movie.overview}}</p></font>
+      
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

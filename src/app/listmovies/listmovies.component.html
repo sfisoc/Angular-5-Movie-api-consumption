@@ -1,0 +1,74 @@
+<div class="container">
+  <div>
+    <button class="btn" (click)="pop()">Popular Movies</button>
+    <button class="btn" (click)="top()">Top Rated</button>
+    <button class="btn" (click)="now()">Now Platying</button>
+    <button class="btn" (click)="upcoming()">Upcoming</button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <fieldset>
+    <legend>Movies </legend>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#moviesNamesList" aria-controls="moviesNamesList" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="float-left">
+
+
+      <nav>
+        <ul class="nav flex-column navbar-nav mr-auto" id="moviesNamesList" *ngFor="let mv of results">
+          <li class="nav-item ">
+            <button (click)="show(mv)">{{mv.title}}</button>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+
+    <div class="tab-content card" *ngIf="current">
+
+      <!--Panel 1-->
+      <div class="tab-pane fade in show active" id="{{current.id}}" role="tabpanel">
+        <div class="card card-cascade wider">
+
+          <div class="view overlay hm-white-slight">
+
+
+            <div class="mask">
+              <p style="text-align:center;">
+                  <img src="https://image.tmdb.org/t/p/original{{current.poster_path}}" data-toggle="modal" data-target="#myModal" class="img-fluid"
+                  alt="wider">
+              </p>
+              
+            </div>
+
+          </div>
+
+          <div class="card-body text-center">
+
+            <h4 class="card-title">
+              <font color="black"><strong>{{current.title}}</strong></font>
+            </h4>
+            <h5 class="indigo-text">
+
+               <font color="black"><strong>{{current.release_date}}</strong></font>
+            </h5>
+
+            <p class="card-text smalldetails">{{current.overview}}</p>
+
+          </div>
+        </div>
+        <!--/.Panel 1-->
+
+        <!--Panel 2-->
+
+        <!--/.Panel 4-->
+
+      </div>
+    </div>
+  </fieldset>
+
+</div>
